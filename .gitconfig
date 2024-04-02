@@ -1,0 +1,15 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	email = erich.kramer1@gmail.com
+[core]
+	excludesfile = /home/erich/.gitignore
+	editor = vim
+[alias]
+	co = checkout
+    sync = !av stack sync --prune --trunk --all
+    jm = jump merge
+    last = "!f() { git log --decorate --graph --pretty=short HEAD~$1..HEAD; }; f"
